@@ -20,6 +20,48 @@
 %   2014 Alexander Haase IT Services <support@alexhaase.de>
 %
 
-\section{Convention}
+\documentclass[a4paper,11pt]{article}
 
-\input{convention_charset}
+%
+% includes
+%
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{cite}
+
+
+
+%
+% document style
+%
+\geometry{a4paper, tmargin=20mm, bmargin=20mm, lmargin=20mm, rmargin=20mm}
+\setlength{\parindent}{0pt}
+
+%
+% document information
+%
+\title{Convention of designations for IT inventory}
+\author{Alexander Haase}
+\date{\today}
+
+
+%
+% document
+%
+\begin{document}
+	\maketitle
+
+%	\tableofcontents
+
+	\input{license}
+
+	\input{introduction}
+	\input{requirements}
+	\input{convention}
+
+	% add references
+	\nocite{*}
+	\bibliography{references}{}
+	\bibliographystyle{plain}
+\end{document}
