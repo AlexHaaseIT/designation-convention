@@ -32,8 +32,8 @@ will become 34 instead of 36! \\
 
 The check digit is computed equivalent to the check digit of an
 GTIN\footnote{Global Trade Item Number}. It results from the modulo 34 (10
-digits + 24 characters) of the summed from behind digits, which are alternately
-multiplied by 3 and 1. \\
+digits + 24 characters, but not ``-'') of the summed from behind digits, which
+are alternately multiplied by 3 and 1. \\
 
 
 This algorithm could be written as mathematical function for the string $x$ with
