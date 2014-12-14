@@ -1,0 +1,93 @@
+% This file is part of the convention of designations for IT inventory.
+%
+% This convention is a free document: you can redistribute it and/or modify it
+% under the terms of the GNU General Public License as published by the Free
+% Software Foundation, either version 3 of the License, or (at your option) any
+% later version.
+%
+% This document is distributed in the hope that it will be useful,but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+% FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+% more details.
+%
+% You should have received a copy of the GNU General Public License along with
+% this document. If not, see
+%
+%   http://www.gnu.org/licenses/
+%
+%
+% Copyright (C)
+%   2014 Alexander Haase IT Services <support@alexhaase.de>
+%
+
+\subsection{Network Ports}
+
+A designation for a network port consists of a room and a port number seperated
+by dash ``-'' and a checksum.
+
+\begin{figure}[H]
+	Room: 212; Port: 6 \\
+	Basic designation: 212-6 \\
+
+	Caclulation of the checksum:
+	\begin{align*}
+		\sum_{i=0}^{n} result[i] &= 66 \\
+		66 \mod 34 &= 32 \hat{=} X
+	\end{align*}
+
+	The complete designation will be ``212-6X''.
+
+	\caption{Example network port designation}
+\end{figure}
+
+The designation should be written at the top of the network port. \\
+
+
+If your network port has two RJ45-plugs, a second row with the letters ``A'' and
+``B'' under the designation is required. ``A'' will always be the left ``B'' the
+right.
+For fiber ports (or network ports that are turned $90^{\circ}$) the top will
+always be ``A'' and ``B'' always the bottom. If possible, write the letters
+\underline{left} beside the RJ45- / fiber-plugs.
+
+\begin{multicols}{2}
+	\begin{figure}[H]
+		\centering
+
+		\begin{verbatim}
+			########################
+			#                      #
+			#        212-6X        #
+			#      A        B      #
+			#   ######    ######   #
+			#   #    #    #    #   #
+			#   #    #    #    #   #
+			#   ######    ######   #
+			#                      #
+			#                      #
+			########################
+		\end{verbatim}
+
+		\caption{Example network port labeling (normal)}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+
+		\begin{verbatim}
+			#######################
+			#                     #
+			#        212-6X       #
+			#                     #
+			#    A ##########     #
+			#      ##########     #
+			#                     #
+			#    B ##########     #
+			#      ##########     #
+			#                     #
+			#######################
+		\end{verbatim}
+
+		\caption{Example network port labeling (vertical)}
+	\end{figure}
+\end{multicols}
