@@ -20,15 +20,37 @@
 %   2014 Alexander Haase IT Services <support@alexhaase.de>
 %
 
+\section{General}
+
+
+\subsection{Charset}
+
+To avoid confusions, only the following characters are allowed:
+
+\begin{verbatim}
+0123456789ABCDEFGHJKLMNPQRSTUVWXYZ-
+\end{verbatim}
+
+\textbf{Note:} The characters ``I'' and ``O'' are \textbf{not} listed, because
+they can be confused with ``1'' and ``0''. Special characters except ``-'' are
+not allowed. \\
+
+
+It is recommended to use only capital letters on any label that is readable by
+customers. In applications any input should be handled case insensitive, so the
+data input is easier for the user.
+
+
+
 \subsection{Checksum}
 
 To avoid errors when transferring the designation, a check digit is appended to
 each designation. \\
 
-The check digit is computed equivalent to the check digit of an
-GTIN\footnote{Global Trade Item Number} \cite{ean_checksum}. It results from the modulo 34 (10
-digits + 24 characters, but not ``-'') of the summed from behind digits, which
-are alternately multiplied by weight of 3 and 1. \\
+The check digit is computed equivalent to the check digit of a
+GTIN\footnote{Global Trade Item Number} \cite{ean_checksum}. It results from the
+modulo 34 (10 digits + 24 characters, but not ``-'') of the summed from behind
+digits, which are alternately multiplied by weight of 3 and 1. \\
 
 For the computation of the check digit, each character is interpreted as its
 representive integer value (A $\rightarrow$ 10, B $\rightarrow$ 11, ...).
@@ -53,7 +75,7 @@ If the chechsum is greater 9, the result has to be written as a character.
 
 		\begin{align*}
 			\sum_{i=0}^{n} result[i] &= 65 \\
-			65 \mod 34 &= 31 = W
+			65 \mod 34 &= 31 \hat{=} W
 		\end{align*}
 
 		Complete designation: ``AB1234W''.
