@@ -25,17 +25,17 @@
 To avoid errors when transferring the designation, a check digit is appended to
 each designation. \\
 
-For the computation of the check digit, each character is interpreted as its
-representive integer value (A $\rightarrow$ 10, B $\rightarrow$ 11, ...).
-\textit{Note}, that ``I'' and ``O'' are not allowed in our charset, so that $Z$
-will become 34 instead of 36! \\
-
 The check digit is computed equivalent to the check digit of an
-GTIN\footnote{Global Trade Item Number}. It results from the modulo 34 (10
+GTIN\footnote{Global Trade Item Number} \cite{ean_checksum}. It results from the modulo 34 (10
 digits + 24 characters, but not ``-'') of the summed from behind digits, which
 are alternately multiplied by weight of 3 and 1. \\
 
-If the chechsum is greater 9, the result has to be written as a character. \\
+For the computation of the check digit, each character is interpreted as its
+representive integer value (A $\rightarrow$ 10, B $\rightarrow$ 11, ...).
+\textit{Note}, that ``I'' and ``O'' are not allowed in our charset, so that the
+maximum integer value will be 35. \\
+
+If the chechsum is greater 9, the result has to be written as a character.
 
 
 \begin{multicols}{2}
