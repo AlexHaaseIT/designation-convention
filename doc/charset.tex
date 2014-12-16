@@ -1,0 +1,66 @@
+% This file is part of the convention of designations for IT inventory.
+%
+% This convention is a free document: you can redistribute it and/or modify it
+% under the terms of the GNU General Public License as published by the Free
+% Software Foundation, either version 3 of the License, or (at your option) any
+% later version.
+%
+% This document is distributed in the hope that it will be useful,but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+% FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+% more details.
+%
+% You should have received a copy of the GNU General Public License along with
+% this document. If not, see
+%
+%   http://www.gnu.org/licenses/
+%
+%
+% Copyright (C)
+%   2014 Alexander Haase IT Services <support@alexhaase.de>
+%
+
+\section{Charset}
+
+In this convention an derived alphabet of the ``Extended Hex'' Base 32 Alphabet
+in RFC 4648 \cite{RFC-4648} will be used. In addition to the described alphabet,
+the following characters are \textbf{not} allowed:
+
+\begin{itemize}
+	\itemsep 0pt
+
+	\item ``I'' and ``O'' may be confused with ``1'' and ``0''
+	\item ``V'' may be confused with ``u'' and ``r''\footnote{\label{foot:handwriting}especially in handwriting}
+	\item ``Z'' may be confused with ``2''\footref{foot:handwriting}
+\end{itemize}
+
+Instead of forbidding ``0'', ``1'' and ``2'' as recommended in z-base-32
+\cite{z-base-32}, all digits are allowed to allow integer-only designations.
+For separation ``-'' is also allowed.
+
+
+\begin{figure}[H]
+	\label{fig:charset}
+
+	\begin{verbatim}
+		Value Encoding  Value Encoding  Value Encoding  Value Encoding  Value Encoding
+		    0 0             7 7            14 E            21 M            28 U
+		    1 1             8 8            15 F            22 N            29 W
+		    2 2             9 9            16 G            23 P            30 X
+		    3 3            10 A            17 H            24 Q            31 Y
+		    4 4            11 B            18 J            25 R            32 -
+		    5 5            12 C            19 K            26 S
+		    6 6            13 D            20 L            27 T
+	\end{verbatim}
+
+	\caption{The allowed Alphabet and their representive integer values}
+\end{figure}
+
+
+Any printed label has to be printed in capital letters. In software applications
+lowercase letters may be used, but it is recommended to print any information
+that is accessable for customers also in \underline{big} capital letters, so
+that the designation is clearly readable by them. \\
+
+Software applications that should handle any designation case insensitive, so
+the data input is easier for the user.

@@ -21,9 +21,10 @@
 %
 
 \subsection{Network Ports}
+\label{chap:con_netport}
 
-A designation for a network port consists of a room and a port number seperated
-by dash ``-'' and a checksum.
+A designation for a network port differs from the main convention and consists
+of a room and a port number seperated by dash ``-'' and a checksum.
 
 \begin{figure}[H]
 	Room: 212; Port: 6 \\
@@ -45,16 +46,18 @@ The designation should be written at the top of the network port. \\
 
 If your network port has two RJ45-plugs, a second row with the letters ``A'' and
 ``B'' under the designation is required. ``A'' will always be the left ``B'' the
-right.
-For fiber ports (or network ports that are turned $90^{\circ}$) the top will
-always be ``A'' and ``B'' always the bottom. If possible, write the letters
-\underline{left} beside the RJ45- / fiber-plugs.
+right. For fiber ports (or network ports that are turned $90^{\circ}$) the top
+will always be ``A'' and ``B'' always the bottom. If possible, write the letters
+\underline{left} beside the RJ45- / fiber-plugs. \\
 
 
-\begin{multicols}{2}
+``A'' and ``B'' belong to the name of the (left or right) network port (e.g. the
+name of the left network port could be ``212-62A''), but they are \underline{not}
+considered in the calculation of the checksum.
+
+
+\begin{minipage}[t]{.42\textwidth}
 	\begin{figure}[H]
-		\centering
-
 		\begin{verbatim}
 
 			      ########################
@@ -72,10 +75,10 @@ always be ``A'' and ``B'' always the bottom. If possible, write the letters
 
 		\caption{Example network port labeling (normal)}
 	\end{figure}
-
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.42\textwidth}
 	\begin{figure}[H]
-		\centering
-
 		\begin{verbatim}
 
 			       #######################
@@ -93,4 +96,4 @@ always be ``A'' and ``B'' always the bottom. If possible, write the letters
 
 		\caption{Example network port labeling (vertical)}
 	\end{figure}
-\end{multicols}
+\end{minipage} \\

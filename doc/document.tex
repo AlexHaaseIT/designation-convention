@@ -34,6 +34,7 @@
 \usepackage{multicol}
 \usepackage[bottom]{footmisc}
 \usepackage{gitinfo}
+\usepackage{fancyvrb}
 
 
 
@@ -49,6 +50,21 @@
 
 % space between two columns
 \setlength{\columnsep}{50pt}
+
+% refernced footnotes
+\newcommand{\footlabel}[2]{%
+	\addtocounter{footnote}{1}%
+	\footnotetext[\thefootnote]{%
+		\addtocounter{footnote}{-1}%
+		\refstepcounter{footnote}\label{#1}%
+		#2%
+	}%
+	$^{\ref{#1}}$%
+}
+
+\newcommand{\footref}[1]{%
+	$^{\ref{#1}}$%
+}
 
 
 
@@ -76,7 +92,8 @@
 
 	\input{introduction}
 	\input{requirements}
-	\input{general}
+	\input{charset}
+	\input{checksum}
 	\input{convention}
 
 

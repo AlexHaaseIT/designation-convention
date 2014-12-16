@@ -20,51 +20,8 @@
 %   2014 Alexander Haase IT Services <support@alexhaase.de>
 %
 
-\section{General}
-
-
-\subsection{Charset}
-
-In this convention an derived alphabet of the ``Extended Hex'' Base 32 Alphabet
-in RFC 4648 \cite{RFC-4648} will be used. In addition to the described alphabet,
-the following characters are \textbf{not} allowed:
-
-\begin{itemize}
-	\item ``I'' and ``O'' may be confused with ``1'' and ``0''
-	\item ``V'' may be confused with ``u'' and ``r'' (especially in handwriting)
-	\item ``Z'' may be confused with ``2'' (especially in handwriting)
-\end{itemize}
-
-Instead of forbidding ``0'', ``1'' and ``2'' as recommended in z-base-32
-\cite{z-base-32}, all digits are allowed to allow integer-only designations.
-For separation ``-'' is also allowed.
-
-
-\begin{figure}[H]
-	\label{charset}
-
-	\begin{verbatim}
-		Value Encoding  Value Encoding  Value Encoding  Value Encoding  Value Encoding
-		    0 0             7 7            14 E            21 M            28 U
-		    1 1             8 8            15 F            22 N            29 W
-		    2 2             9 9            16 G            23 P            30 X
-		    3 3            10 A            17 H            24 Q            31 Y
-		    4 4            11 B            18 J            25 R            32 -
-		    5 5            12 C            19 K            26 S
-		    6 6            13 D            20 L            27 T
-	\end{verbatim}
-
-	\caption{The allowed Alphabet and their representive integer values}
-\end{figure}
-
-
-It is recommended to use only capital letters on any label that is readable by
-customers. In applications any input should be handled case insensitive, so the
-data input is easier for the user.
-
-
-
-\subsection{Checksum}
+\section{Checksum}
+\label{chap:checksum}
 
 To avoid errors when transferring the designation, a check digit is appended to
 each designation. \\
@@ -72,14 +29,13 @@ each designation. \\
 The checksum is computed equivalent to the check digit of a
 GTIN\footnote{Global Trade Item Number} \cite{ean_checksum}. It results from
 the modulo 32 (allowed charset without ``-'') of the summed from behind
-characters, which are alternately multiplied by weight of 3 and 1. \\
+representive integer value of each character\footnote{\label{foot:charset}see
+chapter \ref{fig:charset}}, which are alternately multiplied by weight of 3 and
+1. \\
 
-For the computation of the checksum, each character is interpreted as its
-representive integer value (see \ref{charset}). The resulting checksum will be
-encoded back to its representive character as defined in \ref{charset}. \\
+The resulting checksum will be encoded back to its representive character\footref{foot:charset}.
 
-
-\begin{multicols}{2}
+\begin{minipage}[t]{.45\textwidth}
 	\begin{figure}[H]
 		\centering
 
@@ -101,7 +57,9 @@ encoded back to its representive character as defined in \ref{charset}. \\
 
 		\caption{Example for even $n$}
 	\end{figure}
-
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.45\textwidth}
 	\begin{figure}[H]
 		\centering
 
@@ -123,7 +81,7 @@ encoded back to its representive character as defined in \ref{charset}. \\
 
 		\caption{Example for odd $n$}
 	\end{figure}
-\end{multicols}
+\end{minipage} \\
 
 
 This algorithm could be written as mathematical function for the string $x$ with
