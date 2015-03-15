@@ -51,21 +51,6 @@
 % space between two columns
 \setlength{\columnsep}{50pt}
 
-% refernced footnotes
-\newcommand{\footlabel}[2]{%
-	\addtocounter{footnote}{1}%
-	\footnotetext[\thefootnote]{%
-		\addtocounter{footnote}{-1}%
-		\refstepcounter{footnote}\label{#1}%
-		#2%
-	}%
-	$^{\ref{#1}}$%
-}
-
-\newcommand{\footref}[1]{%
-	$^{\ref{#1}}$%
-}
-
 
 
 %
@@ -75,7 +60,7 @@
 	Convention for designations of IT components \\
 	\small Version: \gitVtag-\gitAbbrevHash
 }
-\author{Alexander Haase}
+\author{Alexander Haase (\href{mailto:ahaase@alexhaase.de}{ahaase@alexhaase.de})}
 \date{\gitAuthorDate}
 
 
