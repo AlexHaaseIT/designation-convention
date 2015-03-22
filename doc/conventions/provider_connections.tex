@@ -20,24 +20,18 @@
 %   2014 Alexander Haase IT Services <support@alexhaase.de>
 %
 
-\section{Designation convention}
+\subsection{Provider connections}
+\label{chap:spec_provider_conn}
 
-\textit{All designations are constructed according to the following pattern, if
-not otherwise specified in the relevant convention.} \\
+The ``APL'' designations depend on designations of your telecommunication
+provider. Regular your provider will tell you, at which ``APL'' port a givven
+number is connected. You may need this number, if you have to connect new wires
+to the APL-port, so it will be usefull to write this number down. \\
 
+The ``TAE'' designation depends on the ``APL'' designation: If the wire is
+connected to APL-port 9, then it will be ``TAE9''. \\
 
-A designation starts with one to three letter ``device identifier'' followed by
-a alphanumeric ``ID string'' and terminated by the checksum as defined in
-chapter \ref{chap:checksum}. \\
-
-The maximum length of the whole designation without hyphens is 10. A group of
-characters between hyphens may not be longer than 4 characters.
-
-
-
-%
-% include specific conventions
-%
-
-\input{conventions/device_identifier}
-\input{conventions/network_port}
+\textbf{Note:} \textit{For ``APL'' and ``TAE'' designations, no
+checksum\footnote{\label{foot:checksum}see chapter \ref{chap:checksum}} will be
+appended, otherwise there could be problems when you want to reference these by
+the telecommunication provider.}

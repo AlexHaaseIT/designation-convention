@@ -24,14 +24,14 @@
 
 In this convention an derived alphabet of the ``Extended Hex'' Base 32 Alphabet
 in RFC 4648 \cite{RFC-4648} will be used. In addition to the described alphabet,
-the following characters are \textbf{not} allowed:
+the following characters are \textbf{\underline{not}} allowed:
 
 \begin{itemize}
 	\itemsep 0pt
 
-	\item ``I'' and ``O'' may be confused with ``1'' and ``0''
-	\item ``V'' may be confused with ``u'' and ``r''\footnote{\label{foot:handwriting}especially in handwriting}
-	\item ``Z'' may be confused with ``2''\footref{foot:handwriting}
+	\item ``I'', ``O'': may be confused with ``1'' and ``0''\footnote{\label{foot:handwriting}especially in handwriting}
+	\item ``V'': may be confused with ``u'' and ``r''\footref{foot:handwriting}
+	\item ``Z'': may be confused with ``2''\footref{foot:handwriting}
 \end{itemize}
 
 Instead of forbidding ``0'', ``1'' and ``2'' as recommended in z-base-32
@@ -57,10 +57,10 @@ For separation ``-'' is also allowed.
 \end{figure}
 
 
-Any printed label has to be printed in capital letters. In software applications
-lowercase letters may be used, but it is recommended to print any information
-that is accessable for customers also in \underline{big} capital letters, so
-that the designation is clearly readable by them. \\
+Any label has to be printed in \underline{big capital} letters, so it is easier
+for the customer to read them. \\
 
-Software applications that should handle any designation case insensitive, so
-the data input is easier for the user.
+Software applications should accept lowercase letters, but transform them into
+uppercase letters before processing them, so the data input is easier for the
+user. If information is shown to the customer (e.g. ``information about your
+Computer''), the designation should be printed in a bigger font-size.

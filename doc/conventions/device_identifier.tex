@@ -26,12 +26,31 @@
 
 \subsubsection{Network infrastructure}
 
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{1.4cm}p{15cm}}
-	APL	& $UK_0$ port of the telecommuncation provider. ``ID string'' is an
-		integer representing the TAE/APL port number. (e.g. TAE1/APL1 would be
-		``APL16''). This designation should only be used in documentations, but
-		the normal network port designation (see chapter \ref{chap:con_netport})
-		should be used.
+	APL	& ``\textbf{A}bschluss\textbf{P}unkt\textbf{L}inientechnik'' describes
+		the terminating point of the wire to the telecommunication provider to
+		the internal building infrastructure. \textit{\underline{This
+		designation must not be set by you, but will be set by the
+		telecommunication provider!} See \ref{chap:spec_provider_conn} for more
+		details.} \\
+
+	ESC & Ethernet network port. \textit{See \ref{chap:spec_netport} for more
+		details.} \\
+
+	ISC & ISDN network port. \underline{Will only be used, if only four wires
+		instead of 8 are connected.} \textit{See \ref{chap:spec_netport} for
+		more details.} \\
+
+	TAE & ``\textbf{T}eilnehmer\textbf{A}nschluss\textbf{E}inheit'' descibes the
+		terminating network port of the wire to the telecommunication provider.
+		\textit{\underline{This designation must not be set by you, but is
+		dependent on the connected APL port!} See \ref{chap:spec_provider_conn}
+		for more details.} \\
+
+	AP	& Wireles-LAN access-point \\
+
+	RT	& Harware router \\
 \end{tabular}
 
 
@@ -41,7 +60,7 @@
 \begin{tabular}{p{1.4cm}p{15cm}}
 	SRV	& Server \\
 
-	WST	& Workstation and standalone computer \\
+	WST	& Workstation, standalone computer or thinclient \\
 
 	VC	& Virtual container \\
 

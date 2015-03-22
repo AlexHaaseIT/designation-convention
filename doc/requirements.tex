@@ -20,26 +20,45 @@
 %   2014 Alexander Haase IT Services <support@alexhaase.de>
 %
 
-\section{Requirements}
+\section{Requirements specification}
 
 \begin{itemize}
 	\item Every designation has to be unique, otherwise two (or more) items
-		could be confused.
+		could be confused. If a device is replaced, it should get a new
+		designation instead of keeping the old one to distinguish the old and
+		new device.
+
+	\item A designation should not be reassigned to a new item, as long as it is
+		listed in any logfile or somewhere else. Otherwise the new device could
+		be confused with the old one.
+
+	\item If this designation is used by administrators who maintain multiple
+		customers, a designation should be unique per customer. In e.g.
+		databases the designation should be prefixed by the customer number to
+		be unique, but it shall not be printed on any label, because this is
+		a redundant information and makes the designation label to long.
 
 	\item For maintenance and customer support, the designation should be
-		clearly stated and read. The case of the letters should be ignored,
-		otherwise it is very complicated to spell. Lower- and uppercase letters
-		should not be mixed up to not confuse the customer. Special characters
-		should be avoided.
+		clearly stated and read.
+		\begin{itemize}
+			\item The case of the letters should be ignored, otherwise it is
+				very complicated to spell.
+
+			\item Lower- and uppercase letters should not be mixed up to not
+				confuse the customer. It is recommended to use only uppercase
+				letters, because they are better to read.
+
+			\item Special characters should be avoided.
+		\end{itemize}
 
 	\item The designation should be kept short, but not too short, so that it
-		could be confused with other numbers. Also it should not be too long, so
-		that the customer can tell the customer support fast, for which device
-		he needs help.
+		could be confused with other numbers (e.g. serial number). Also it
+		should not be too long, so that the customer can tell the customer
+		support fast, for which device he needs help.
 
-	\item The designation should contain a few characters to associate a device
-		with the designation (e.g. a printer could have pr12345 as designation),
-		so the customer and customer support can check, if the designation
-		matches the right device type and it is easier for the customer to
-		search for the designation.
+	\item The designation should contain a few characters to associate the
+		designation with a device (e.g. a printer could have pr12345 as
+		designation), so the customer and customer support can check, if the
+		designation matches the right device type and it is easier for the
+		customer to search for the designation.
 \end{itemize}

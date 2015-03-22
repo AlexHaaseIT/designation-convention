@@ -21,39 +21,37 @@
 %
 
 \subsection{Network Ports}
-\label{chap:con_netport}
+\label{chap:spec_netport}
 
-A designation for a network port differs from the main convention and consists
-of a room and a port number seperated by dash ``-'' and a checksum.
-
-\begin{figure}[H]
+\begin{wrapfigure}{r}{0.35\textwidth}
 	Room: 212; Port: 6 \\
-	Basic designation: 212-6 \\
+	Basic designation: ESC-212-6 \\
 
 	Caclulation of the checksum:
 	\begin{align*}
-		\sum_{i=0}^{n} result[i] &= 66 \\
-		66 \mod 32 &= 2
+		\sum_{i=0}^{n} x_i &= 192 \\
+		192 \mod 32 &= 7
 	\end{align*}
 
-	The complete designation will be ``212-62''.
+	The complete designation will be ``ESC-212-67''.
 
-	\caption{Example network port designation}
-\end{figure}
+	\caption{Example network port designation for ethernet}
+\end{wrapfigure}
 
-The designation should be written at the top of the network port. \\
+A designation for a network port consists of the device identifier, a room and a
+port number seperated by dash ``-'' and a checksum\footref{foot:checksum}. \\
 
+The designation should be written at the top of the network port. If the
+network port has two RJ45-plugs, two letters seperated by slash will be
+appended. Regular these will be ``A/B'', but if two network ports will be side
+by side, they may share the port-number, but the letters will change to e.g.
+``C/D''. The first letter wll always be the left plug, the second the right. For
+fiber ports (or network ports that are turned $90^{\circ}$) the first will
+always be top and the second the bottom. \\
 
-If your network port has two RJ45-plugs, a second row with the letters ``A'' and
-``B'' under the designation is required. ``A'' will always be the left ``B'' the
-right. For fiber ports (or network ports that are turned $90^{\circ}$) the top
-will always be ``A'' and ``B'' always the bottom. If possible, write the letters
-\underline{left} beside the RJ45- / fiber-plugs. \\
-
-
-``A'' and ``B'' belong to the name of the (left or right) network port (e.g. the
-name of the left network port could be ``212-62A''), but they are \underline{not}
-considered in the calculation of the checksum.
+The letters belong to the name of one of the two network ports (e.g. the
+name of the left network port could be ``ESC-212-67A''), but they are
+\underline{not} considered in the calculation of the checksum. \\
 
 
 \begin{minipage}[t]{.42\textwidth}
@@ -62,8 +60,8 @@ considered in the calculation of the checksum.
 
 			      ########################
 			      #                      #
-			      #        212-62        #
-			      #      A        B      #
+			      #      212-62 A/B      #
+			      #                      #
 			      #   ######    ######   #
 			      #   #    #    #    #   #
 			      #   #    #    #    #   #
@@ -83,12 +81,12 @@ considered in the calculation of the checksum.
 
 			       #######################
 			       #                     #
-			       #        212-62       #
+			       #      212-62 A/B     #
 			       #                     #
-			       #    A ##########     #
+			       #      ##########     #
 			       #      ##########     #
 			       #                     #
-			       #    B ##########     #
+			       #      ##########     #
 			       #      ##########     #
 			       #                     #
 			       #######################
@@ -97,3 +95,13 @@ considered in the calculation of the checksum.
 		\caption{Example network port labeling (vertical)}
 	\end{figure}
 \end{minipage} \\
+
+For ethernet cabeling, the device identifier will be ``ESC'', for ISDN ``ISC''.
+It is irrelevant, if the singal is ethernet or ISDN, but it will be ``ISC'', if
+not eight but only four wires are connected to the network-port. This implifies,
+that a ISDN device may also be connected to an ESC-port, if it is switched to
+an NTBA. \\
+
+For ethernet network ports, the device identifier does not need to be printed
+on an human readable label, but must be included in any digital label that is
+proccessed non-human (e.g. QR code or databases).

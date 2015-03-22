@@ -26,14 +26,15 @@
 To avoid errors when transferring the designation, a check digit is appended to
 each designation. \\
 
-The checksum is computed equivalent to the check digit of a
-GTIN\footnote{Global Trade Item Number} \cite{ean_checksum}. It results from
+The checksum is computed like the check digit of a GTIN\footnote{Global Trade
+Item Number} \cite{ean_checksum}. It results from
 the modulo 32 (allowed charset without ``-'') of the summed from behind
 representive integer value of each character\footnote{\label{foot:charset}see
 chapter \ref{fig:charset}}, which are alternately multiplied by weight of 3 and
 1. \\
 
-The resulting checksum will be encoded back to its representive character\footref{foot:charset}.
+The resulting checksum will be encoded back to its representive
+character\footref{foot:charset}.
 
 \begin{minipage}[t]{.45\textwidth}
 	\begin{figure}[H]
@@ -87,6 +88,6 @@ The resulting checksum will be encoded back to its representive character\footre
 This algorithm could be written as mathematical function for the string $x$ with
 length $n$:
 \begin{align*}
-	f(x, n) &= \left(\sum_{i=1}^{n} x_i \cdot \left(1 + 2 \cdot \left( \left(
-		n - i + 1 \right) \mod 2 \right) \right) \right) \mod 32
+	f(x, n) &= \sum_{i=0}^{n-1} x_i \left( 1 + 2 \left( \left( n - i \right) mod
+		2 \right) \right) \mod 32
 \end{align*}
