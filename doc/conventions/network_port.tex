@@ -25,21 +25,21 @@
 
 \begin{wrapfigure}{r}{0.35\textwidth}
 	Room: 212; Port: 6 \\
-	Basic designation: ESC-212-6 \\
+	Basic designation: SC8-212-6 \\
 
 	Caclulation of the checksum:
 	\begin{align*}
-		\sum_{i=0}^{n} x_i &= 192 \\
-		192 \mod 32 &= 7
+		\sum_{i=0}^{n} x_i &= 217 \\
+		217 \mod 32 &= 25 \hat{=} R
 	\end{align*}
 
-	The complete designation will be ``ESC-212-67''.
+	The complete designation will be ``SC8-212-6R''.
 
 	\caption{Example network port designation for ethernet}
 \end{wrapfigure}
 
 A designation for a network port consists of the device identifier, a room and a
-port number seperated by dash ``-'' and a checksum\footref{foot:checksum}. \\
+port number seperated by hyphen ``-'' and a checksum\footref{foot:checksum}. \\
 
 The designation should be written at the top of the network port. If the
 network port has two RJ45-plugs, two letters seperated by slash will be
@@ -50,9 +50,19 @@ fiber ports (or network ports that are turned $90^{\circ}$) the first will
 always be top and the second the bottom. \\
 
 The letters belong to the name of one of the two network ports (e.g. the
-name of the left network port could be ``ESC-212-67A''), but they are
+name of the left network port could be ``SC8-212-6RA''), but they are
 \underline{not} considered in the calculation of the checksum. \\
 
+For ethernet cabeling, the device identifier will be ``SC8'', for ISDN ``SC4''
+and for old PSTN (two wires) ``SC2''. It is not relevant, if the singal is
+ethernet or ISDN, but it will be ``SC4'', if not eight but only four wires are
+connected to the network-port. This implies, that a ISDN device may be connected
+to an ESC-port, but of course this port has to be switched to an $S_0$ bus. \\
+
+At network ports with the device identifier ``SC8'' the device identifier does
+not need to be printed on an human readable label, but must be included in any
+digital label that is proccessed non-human (e.g. QR code or databases). e.g.
+instead of printing ``SC8-212-6RA'' you may print ``212-6RA''.
 
 \begin{minipage}[t]{.42\textwidth}
 	\begin{figure}[H]
@@ -60,7 +70,7 @@ name of the left network port could be ``ESC-212-67A''), but they are
 
 			      ########################
 			      #                      #
-			      #      212-67 A/B      #
+			      #      212-6R A/B      #
 			      #                      #
 			      #   ######    ######   #
 			      #   #    #    #    #   #
@@ -81,7 +91,7 @@ name of the left network port could be ``ESC-212-67A''), but they are
 
 			       #######################
 			       #                     #
-			       #      212-67 A/B     #
+			       #      212-6R A/B     #
 			       #                     #
 			       #      ##########     #
 			       #      ##########     #
@@ -94,14 +104,4 @@ name of the left network port could be ``ESC-212-67A''), but they are
 
 		\caption{Example network port labeling (vertical)}
 	\end{figure}
-\end{minipage} \\
-
-For ethernet cabeling, the device identifier will be ``ESC'', for ISDN ``ISC''.
-It is irrelevant, if the singal is ethernet or ISDN, but it will be ``ISC'', if
-not eight but only four wires are connected to the network-port. This implifies,
-that a ISDN device may also be connected to an ESC-port, if it is switched to
-an NTBA. \\
-
-For ethernet network ports, the device identifier does not need to be printed
-on an human readable label, but must be included in any digital label that is
-proccessed non-human (e.g. QR code or databases).
+\end{minipage}

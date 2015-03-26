@@ -27,45 +27,52 @@
 \subsubsection{Network infrastructure}
 
 \renewcommand{\arraystretch}{1.2}
+\begin{savenotes}
 \begin{tabular}{p{1.4cm}p{15cm}}
-	APL	& ``\textbf{A}bschluss\textbf{P}unkt\textbf{L}inientechnik'' describes
+	APL\footnote{\textbf{A}bschluss\textbf{P}unkt\textbf{L}inientechnik} & Describes
 		the terminating point of the wire to the telecommunication provider to
 		the internal building infrastructure. \textit{\underline{This
 		designation must not be set by you, but will be set by the
 		telecommunication provider!} See \ref{chap:spec_provider_conn} for more
 		details.} \\
 
-	ESC & Ethernet network port. \textit{See \ref{chap:spec_netport} for more
+	SC2 & PSTN network port. \underline{Will be used, if only two wires instead
+		of eight are connected.} \textit{See \ref{chap:spec_netport} for more
 		details.} \\
 
-	ISC & ISDN network port. \underline{Will only be used, if only four wires
-		instead of 8 are connected.} \textit{See \ref{chap:spec_netport} for
-		more details.} \\
+	SC4 & ISDN network port. \underline{Will be used, if only four wires instead
+		of eight are connected.} \textit{See \ref{chap:spec_netport} for more
+		details.} \\
 
-	TAE & ``\textbf{T}eilnehmer\textbf{A}nschluss\textbf{E}inheit'' descibes the
-		terminating network port of the wire to the telecommunication provider.
-		\textit{\underline{This designation must not be set by you, but is
-		dependent on the connected APL port!} See \ref{chap:spec_provider_conn}
-		for more details.} \\
+	SC8 & Ethernet network port. \textit{See \ref{chap:spec_netport} for more
+		details.} \\
+
+	TAE\footnote{\textbf{T}eilnehmer\textbf{A}nschluss\textbf{E}inheit} & Descibes
+		the terminating network port of the wire to the telecommunication
+		provider. \textit{\underline{This designation must not be set by you,
+		but is dependent on the connected APL port!} See
+		\ref{chap:spec_provider_conn} for more details.} \\
 
 	AP	& Wireles-LAN access-point \\
 
 	RT	& Harware router \\
 \end{tabular}
-
+\end{savenotes}
 
 
 \subsubsection{Computer / server / virtual machines}
 
+\begin{savenotes}
 \begin{tabular}{p{1.4cm}p{15cm}}
-	SRV	& Server \\
+	C	& Virtual container (like LXC\footnote{\textbf{L}inu\textbf{X} \textbf{C}ontainers}) \\
 
-	WST	& Workstation, standalone computer or thinclient \\
+	D	& Virtual machine (like domains in XEN) \\
 
-	VC	& Virtual container \\
+	S	& Server \\
 
-	VM	& Virtual machine \\
+	W	& Workstation, standalone computer or thinclient \\
 \end{tabular}
+\end{savenotes}
 
 
 
@@ -74,8 +81,6 @@
 \begin{tabular}{p{1.4cm}p{15cm}}
 	PR	& common printer (laser and inkjet) with or without multifunction (e.g.
 		scanner or fax) \\
-
-	SC	& standalone scanner \\
 
 	FAX	& standalone fax and fax gateways \\
 \end{tabular}
